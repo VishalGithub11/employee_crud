@@ -27,9 +27,11 @@ app.use(cors());
 
 //my routes
 const userRoute = require("./routes/user");
+const employeeRoute = require("./routes/employee");
 
 //routes
 app.use("/api", userRoute);
+app.use("/api", employeeRoute);
 
 //port setup
 const port = process.env.PORT || 5500;
