@@ -8,6 +8,8 @@ const AddEmp = () => {
     name: "",
     age: "",
     email: "",
+    success: false,
+    error: false,
   });
 
   const handleChange = (name) => (e) => {
@@ -19,11 +21,17 @@ const AddEmp = () => {
 
     axios
       .post(`${API}/createemp`, state)
-      .then((response) => console.log(response.data));
+      .then(
+        (response) => console.log(response.data),
+        setState({ ...state, success: true })
+      )
+      .catch(() => {
+        setState({ ...state, error: true });
+      });
   };
 
-  return (
-    <>
+  const addform = () => {
+    return (
       <div className="add_form">
         <div className="form_header">
           <Link to="/home">
@@ -72,9 +80,16 @@ const AddEmp = () => {
             Add
           </button>
         </form>
+        {state.success && (
+          <div>
+            <h3>Employee Added Successfully</h3>
+          </div>
+        )}
       </div>
-    </>
-  );
+    );
+  };
+
+  return <>{addform()}</>;
 };
 
 export default AddEmp;

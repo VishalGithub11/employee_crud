@@ -8,6 +8,7 @@ const Edit = (props) => {
     name: "",
     age: "",
     email: "",
+    success: false,
   });
 
   console.log(props.location.state.id);
@@ -22,7 +23,10 @@ const Edit = (props) => {
 
     axios
       .patch(`${API}/updateemp/${Id}`, state)
-      .then((response) => console.log("edit response", response.data));
+      .then(
+        (response) => console.log("edit response", response.data),
+        setState({ ...state, success: true })
+      );
   };
 
   console.log("edit", state);
@@ -77,6 +81,11 @@ const Edit = (props) => {
             Save Changes
           </button>
         </form>
+        {state.success && (
+          <div>
+            <h3>Details Updated successfully</h3>
+          </div>
+        )}
       </div>
     </div>
   );
