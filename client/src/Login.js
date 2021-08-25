@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { API } from "./API";
 import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [state, setState] = useState({
@@ -59,6 +60,7 @@ const Login = () => {
     return (
       <>
         <div className="login">
+          <h1>Login Here </h1>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
@@ -80,6 +82,12 @@ const Login = () => {
 
             <input type="submit" value="Login" />
           </form>
+          <div>
+            <Link to="/signup">
+              {" "}
+              <p> new user ? SignUp here</p>
+            </Link>
+          </div>
         </div>
       </>
     );

@@ -19,7 +19,7 @@ const Home = () => {
           <input
             name="searchbar"
             className="search_bar"
-            placeholder="Search Name...."
+            placeholder="Search...."
             onChange={(e) => {
               setSearch(e.target.value);
             }}

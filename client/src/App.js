@@ -6,6 +6,7 @@ import EmployeeList from "./EmployeeList";
 import Home from "./Home";
 import AddEmp from "./AddEmp";
 import Edit from "./Edit";
+import Signup from "./Signup";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact component={Login} />
+          <Route path="/signup" exact component={Signup} />
           <Route path="/home" component={Home} />
           <Route path="/edit" component={Edit} />
           <Route path="/addempl" component={AddEmp} />
