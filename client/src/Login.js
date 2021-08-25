@@ -58,27 +58,29 @@ const Login = () => {
   const signinform = () => {
     return (
       <>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="email"
-            name="email"
-            value={state.email}
-            onChange={handleChange("email")}
-            required
-          />
+        <div className="login">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="email"
+              name="email"
+              value={state.email}
+              onChange={handleChange("email")}
+              required
+            />
 
-          <input
-            type="password"
-            placeholder="password"
-            name="password"
-            value={state.password}
-            onChange={handleChange("password")}
-            required
-          />
+            <input
+              type="password"
+              placeholder="password"
+              name="password"
+              value={state.password}
+              onChange={handleChange("password")}
+              required
+            />
 
-          <input type="submit" value="Login" />
-        </form>
+            <input type="submit" value="Login" />
+          </form>
+        </div>
       </>
     );
   };
